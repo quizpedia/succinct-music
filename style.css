@@ -25,16 +25,16 @@ img {
   height: 100%;
   object-fit: cover;
   user-select: none;
-  image-rendering: pixelated;
+  image-rendering: auto;
 }
 
 h1,
 p {
-  font-family: "Press Start 2P", monospace, sans-serif; /* Added fallback */
-  font-size: clamp(0.65rem, 1.8vw, 0.85rem); /* Slightly smaller */
+  font-family: "Press Start 2P", monospace, sans-serif;
+  font-size: clamp(0.65rem, 1.8vw, 0.85rem);
   color: var(--light-clr);
   text-shadow: 
-    0 0 3px var(--light-clr), /* Reduced shadow intensity */
+    0 0 3px var(--light-clr),
     1px 0 1px rgba(0, 204, 0, 0.3),
     -1px 0 1px rgba(230, 0, 230, 0.2);
 }
@@ -45,20 +45,20 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #0A100A; /* Dark green-black */
+  background: #0A100A;
   background-image: 
-    linear-gradient(rgba(0, 204, 0, 0.06) 1px, transparent 1px), /* Softer green grid */
+    linear-gradient(rgba(0, 204, 0, 0.06) 1px, transparent 1px),
     radial-gradient(circle at 50% 50%, rgba(20, 30, 20, 0.2), rgba(20, 30, 20, 0.8)),
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.04"><path d="M10 10h80v80H10z" stroke="%23E600E6" stroke-width="2" fill="none"/><circle cx="50" cy="50" r="5" fill="%2300CC00"/></svg>');
   background-size: 100% 3px, cover, 50px 50px;
   animation: crt-flicker 4s infinite;
-  border: 4px solid var(--primary-clr); /* Slightly thinner border */
-  box-shadow: 0 0 15px var(--primary-clr); /* Reduced glow */
+  border: 4px solid var(--primary-clr);
+  box-shadow: 0 0 15px var(--primary-clr);
 }
 
 @keyframes crt-flicker {
   0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.99; } /* Softer flicker */
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.99; }
 }
 
 main {
@@ -70,7 +70,7 @@ main {
   border: 3px solid var(--primary-clr);
   border-radius: 20px;
   box-shadow: 
-    0 0 10px var(--primary-clr), /* Reduced shadow intensity */
+    0 0 10px var(--primary-clr),
     0 0 20px var(--secondary-clr),
     inset 0 0 8px rgba(20, 30, 20, 0.4);
   overflow: hidden;
@@ -83,9 +83,9 @@ main::before {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 60px;
-  height: 60px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23E600E6"><path d="M20 80 Q50 50 80 20 Q50 50 20 80" stroke="%23E600E6" stroke-width="10" fill="none"/><circle cx="50" cy="50" r="10" fill="%2300CC00"/></svg>');
+  width: 70px;
+  height: 70px;
+  background-image: url('https://github.com/quizpedia/assets/raw/main/succinct%20logos.png');
   background-size: contain;
   background-repeat: no-repeat;
   filter: 
@@ -102,7 +102,7 @@ main::after {
   bottom: 10px;
   right: 15px;
   font-family: "Press Start 2P", monospace, sans-serif;
-  font-size: 0.45rem; /* Slightly smaller */
+  font-size: 0.45rem;
   color: var(--secondary-clr);
   text-shadow: 0 0 3px var(--secondary-clr);
   z-index: 15;
@@ -127,7 +127,7 @@ main::after {
   z-index: 10;
   color: var(--light-clr);
   overflow-y: auto;
-  padding: 12px; /* Slightly more padding */
+  padding: 12px;
   background-image: linear-gradient(rgba(0, 204, 0, 0.03) 1px, transparent 1px);
   background-size: 100% 3px;
 }
@@ -145,16 +145,16 @@ main::after {
 .content::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   border-radius: 0;
-  box-shadow: 0 0 4px var(--scrollbar-thumb); /* Reduced glow */
+  box-shadow: 0 0 4px var(--scrollbar-thumb);
 }
 
 .slider-playlist {
   display: grid;
   grid-template-columns: 45% 55%;
   align-items: start;
-  gap: 12px; /* Increased gap */
+  gap: 12px;
   width: 100%;
-  margin-top: 15px; /* Centering swiper slightly lower, per previous request */
+  margin-top: 15px;
 }
 
 .swiper {
@@ -163,8 +163,9 @@ main::after {
   position: relative;
   z-index: 20;
   align-self: start;
-  margin-top: 25px; /* Adjusted for centering */
+  margin-top: 25px;
   margin-bottom: 15px;
+  perspective: 1000px; /* Creates 3D space for child elements */
 }
 
 .swiper-slide {
@@ -172,29 +173,35 @@ main::after {
   grid-template-rows: 3fr 1fr;
   padding: 10px;
   border-radius: 5px;
-  background: #1A2A1A; /* Dark green-gray */
+  background: #1A2A1A;
   border: 2px solid var(--primary-clr);
   box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.4), /* Base shadow for depth */
     0 0 4px var(--primary-clr),
     1px 0 1px rgba(0, 204, 0, 0.2),
     -1px 0 1px rgba(230, 0, 230, 0.2);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" opacity="0.1"><path d="M5 5h10v10H5z" stroke="%2300CC00" stroke-width="1" fill="none"/></svg>');
   background-size: 20px 20px;
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   height: 300px;
+  transform-style: preserve-3d; /* Ensures 3D rendering */
+  backface-visibility: hidden; /* Hides backface during rotation */
 }
 
 .swiper-slide:hover {
   box-shadow: 
+    0 8px 12px rgba(0, 0, 0, 0.5), /* Enhanced shadow for depth */
     0 0 8px var(--secondary-clr),
     1px 0 2px rgba(0, 204, 0, 0.3),
     -1px 0 2px rgba(230, 0, 230, 0.3);
+  transform: translateZ(20px) rotateX(5deg) rotateY(5deg); /* Slight 3D tilt and pop-out */
 }
 
 .swiper-slide-active {
-  transform: scale(1.05);
+  transform: scale(1.05) translateZ(30px) rotateX(8deg) rotateY(8deg); /* More pronounced 3D effect */
   box-shadow: 
+    0 12px 16px rgba(0, 0, 0, 0.6), /* Stronger shadow for active state */
     0 0 8px var(--secondary-clr),
     1px 0 2px rgba(0, 204, 0, 0.3),
     -1px 0 2px rgba(230, 0, 230, 0.3);
@@ -205,9 +212,10 @@ main::after {
   border-radius: 5px;
   margin-bottom: 5px;
   border: 0px solid var(--secondary-clr);
-  filter: contrast(1.1); /* Reduced for less intensity */
+  filter: contrast(1.1);
   width: 100%;
   height: auto;
+  transform: translateZ(10px); /* Slight pop-out for the image */
 }
 
 .swiper-slide h1 {
@@ -220,8 +228,9 @@ main::after {
     1px 0 1px rgba(0, 204, 0, 0.3),
     -1px 0 1px rgba(230, 0, 230, 0.2);
   margin: auto;
-  font-size: clamp(0.45rem, 1.6vw, 0.65rem); /* Smaller font */
+  font-size: clamp(0.45rem, 1.6vw, 0.65rem);
   padding-top: 5px;
+  transform: translateZ(5px); /* Slight pop-out for text */
 }
 
 .playlist {
@@ -231,8 +240,8 @@ main::after {
   padding-right: 5px;
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Increased gap */
-  margin-bottom: 20px; /* More spacing for mobile, per previous request */
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .playlist::-webkit-scrollbar {
@@ -271,7 +280,7 @@ main::after {
   width: 70%;
   aspect-ratio: 1/1;
   border-radius: 3px;
-  border: 1px solid var(--secondary-clr);
+  border: 0px solid var(--secondary-clr);
   filter: contrast(1.1);
 }
 
@@ -282,11 +291,11 @@ main::after {
 
 .playlist-item .song p:nth-child(2) {
   font-weight: 400;
-  opacity: 0.8; /* Slightly higher for readability */
+  opacity: 0.8;
 }
 
 .share-btn {
-  font-size: 0.9rem; /* Slightly smaller */
+  font-size: 0.9rem;
   color: var(--light-clr);
   background: none;
   border: none;
@@ -341,7 +350,7 @@ main::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px; /* More padding */
+  padding: 12px;
   z-index: 15;
   background-image: linear-gradient(rgba(0, 204, 0, 0.03) 1px, transparent 1px);
   background-size: 100% 3px;
@@ -357,13 +366,13 @@ main::after {
   display: flex;
   justify-content: flex-end;
   padding-right: 60px;
-  margin-bottom: 8px; /* More spacing */
+  margin-bottom: 8px;
 }
 
 .time-display {
   font-family: "Press Start 2P", monospace, sans-serif;
   color: var(--light-clr);
-  font-size: 0.45rem; /* Smaller font */
+  font-size: 0.45rem;
   padding: 2px 5px;
   text-shadow: 0 0 3px var(--light-clr);
 }
@@ -383,7 +392,7 @@ main::after {
 }
 
 .controls i {
-  font-size: 1.2rem; /* Slightly smaller */
+  font-size: 1.2rem;
   color: var(--light-clr);
   text-shadow: 
     0 0 3px var(--light-clr),
@@ -414,7 +423,7 @@ main::after {
     0 0 4px var(--secondary-clr),
     1px 0 1px rgba(0, 204, 0, 0.2),
     -1px 0 1px rgba(230, 0, 230, 0.2);
-  font-size: 1rem; /* Smaller font */
+  font-size: 1rem;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" opacity="0.15"><circle cx="5" cy="5" r="3" fill="%2300CC00"/></svg>');
   background-size: 10px 10px;
   transition: box-shadow 0.3s;
@@ -444,7 +453,7 @@ main::after {
 
 .volume i {
   color: var(--light-clr);
-  font-size: 0.85rem; /* Smaller */
+  font-size: 0.85rem;
   text-shadow: 0 0 3px var(--light-clr);
 }
 
@@ -574,7 +583,7 @@ main::after {
   box-shadow: 0 0 4px var(--secondary-clr);
   transition: box-shadow 0.3s;
   margin-top: 10px;
-  font-size: 0.55rem; /* Smaller font */
+  font-size: 0.55rem;
 }
 
 #addSongBtn:hover {
@@ -587,7 +596,7 @@ main::after {
   }
   .swiper {
     width: 280px;
-    margin-top: 20px;
+    margin-top: 45px;
   }
   .swiper-slide {
     height: 330px;
@@ -615,7 +624,7 @@ main::after {
     grid-template-columns: 100%;
   }
   .swiper {
-    margin: 25px auto 20px; /* Adjusted for centering */
+    margin: 25px auto 20px;
     position: relative;
     width: 200px;
   }
@@ -624,7 +633,7 @@ main::after {
   }
   .playlist {
     max-height: 28vh;
-    margin-bottom: 15px; /* More spacing */
+    margin-bottom: 15px;
     padding-right: 5px;
     gap: 8px;
   }
@@ -676,7 +685,7 @@ main::after {
   .timer-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centered for mobile, per previous request */
+    justify-content: center;
     padding-right: 0;
     margin-bottom: 6px;
   }
@@ -747,7 +756,7 @@ main::after {
 
 @media (prefers-reduced-motion: reduce) {
   body {
-    animation: none; /* Disable flicker for accessibility */
+    animation: none;
   }
   .swiper-slide,
   .playlist-item,
