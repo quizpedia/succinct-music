@@ -18,11 +18,11 @@ if (!audioPlayer || !volumeRange || !progressBar || !playPauseBtn || !playPauseI
   });
 }
 
-let currentSongIndex = 2;
+let currentSongIndex = 1;
 let isSongLoaded = false;
 
 const songs = [
-  "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/SynCole-FeelGood.mp3",
+  "https://github.com/quizpedia/assets/raw/main/Prove%20Ur%20Love.mp3",
   "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/HarddopeClarx-Castle.mp3",
   "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/PlayDead-NEFFEX.mp3",
   "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/KnowMyself-PatrickPatrikios.mp3",
@@ -33,7 +33,7 @@ const songs = [
 // const songs = ["path/to/local/SynCole-FeelGood.mp3", ...];
 
 const songMetadata = [
-  { title: "Feel Good", artist: "Syn Cole" },
+  { title: "Prove Ur Love", artist: "0XNEET" },
   { title: "Castle", artist: "Clarx & Harddope" },
   { title: "Play Dead", artist: "NEFFEX" },
   { title: "Know Myself", artist: "Patrick Patrikios" },
@@ -41,7 +41,7 @@ const songMetadata = [
 ];
 
 const thumbnails = [
-  "https://github.com/user-attachments/assets/d80e6b68-b67a-4e27-86ee-e00581883d5c",
+  "https://github.com/quizpedia/assets/raw/main/0xneet.png",
   "https://github.com/user-attachments/assets/9240f7ff-1b8e-4e62-a2d1-df78b285c7e0",
   "https://github.com/user-attachments/assets/6e5ba953-49c5-4634-a1c5-4caf310cba86",
   "https://github.com/user-attachments/assets/a2ca0dfd-e53f-4e79-b8b0-288847e59b9a",
@@ -203,7 +203,7 @@ function addSong(artist, title, duration, audioUrl, thumbnailUrl) {
   newShareBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const song = songMetadata[newIndex];
-    const siteUrl = "https://succinct.xyz";
+    const siteUrl = "https://succinct-music-player.vercel.app/";
     const tweetText = `Listening to "${song.title}" by ${song.artist} on a retro CRT music player powered by @SuccinctLabs! 🎵 Check it out: ${siteUrl} #ProveWithUs #ZKMix`;
     const tweetUrl = encodeURIComponent(tweetText);
     window.open(`https://x.com/intent/tweet?text=${tweetUrl}`, '_blank', 'width=550,height=420');
@@ -369,7 +369,7 @@ if (shareBtns) {
     shareBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       const song = songMetadata[index];
-      const siteUrl = "https://succinct.xyz";
+      const siteUrl = "https://succinct-music-player.vercel.app/";
       const tweetText = `Gprove... 🎶 
 Just vibin’, listening "${song.title}" by ${song.artist} on Succinct Audio Player. You gotta hear this:
 ${siteUrl}
