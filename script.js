@@ -22,30 +22,30 @@ let currentSongIndex = 1;
 let isSongLoaded = false;
 
 const songs = [
+  "https://github.com/quizpedia/assets/raw/main/Provers%20Code.mp3",
   "https://github.com/quizpedia/assets/raw/main/Prove%20Ur%20Love.mp3",
-  "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/HarddopeClarx-Castle.mp3",
-  "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/PlayDead-NEFFEX.mp3",
-  "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/KnowMyself-PatrickPatrikios.mp3",
-  "https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/BesomorphCoopex-Redemption.mp3",
+  "https://github.com/quizpedia/assets/raw/main/Stage%202.mp3",
+  "https://github.com/quizpedia/assets/raw/main/Prove%20With%20Us.mp3",
+  "https://github.com/quizpedia/assets/raw/main/Proof%20of%20the%20Future.mp3",
 ];
 
 // Catatan: Ganti URL di atas dengan file lokal untuk menghindari masalah CORS, misalnya:
 // const songs = ["path/to/local/SynCole-FeelGood.mp3", ...];
 
 const songMetadata = [
-  { title: "Prove Ur Love", artist: "0XNEET" },
-  { title: "Castle", artist: "Clarx & Harddope" },
-  { title: "Play Dead", artist: "NEFFEX" },
-  { title: "Know Myself", artist: "Patrick Patrikios" },
-  { title: "Redemption", artist: "Besomorph & Coopex" },
+  { title: "Provers Code", artist: "Rnoozy" },
+  { title: "Prove Your Love", artist: "0XNEET" },
+  { title: "Stage 2", artist: "Nvrlxst" },
+  { title: "Prove With Us", artist: "Sayang" },
+  { title: "Proof Of The Future", artist: "Quinn" },
 ];
 
 const thumbnails = [
-  "https://github.com/quizpedia/assets/raw/main/0xneet.png",
-  "https://github.com/user-attachments/assets/9240f7ff-1b8e-4e62-a2d1-df78b285c7e0",
-  "https://github.com/user-attachments/assets/6e5ba953-49c5-4634-a1c5-4caf310cba86",
-  "https://github.com/user-attachments/assets/a2ca0dfd-e53f-4e79-b8b0-288847e59b9a",
-  "https://github.com/user-attachments/assets/b286d7ff-52a1-452d-9cd9-5920c937b16e",
+  "https://github.com/quizpedia/assets/raw/main/Rnoozy.jpg",
+  "https://github.com/quizpedia/assets/raw/main/0XNEET.png",
+  "https://github.com/quizpedia/assets/raw/main/Nvrlxst.jpg",
+  "https://github.com/quizpedia/assets/raw/main/Sayang.jpg",
+  "https://github.com/quizpedia/assets/raw/main/Quinn.jpg",
 ];
 
 var swiper = new Swiper(".swiper", {
@@ -203,8 +203,8 @@ function addSong(artist, title, duration, audioUrl, thumbnailUrl) {
   newShareBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     const song = songMetadata[newIndex];
-    const siteUrl = "https://succinct-music-player.vercel.app/";
-    const tweetText = `Listening to "${song.title}" by ${song.artist} on a retro CRT music player powered by @SuccinctLabs! 🎵 Check it out: ${siteUrl} #ProveWithUs #ZKMix`;
+    const siteUrl = "https://succinct-playlist.vercel.app/";
+    const tweetText = `Listening to "${song.title}" by ${song.artist} on a Succinct music player powered by Provers! 🎵 Check it out: ${siteUrl} #ProveWithUs #SuccinctMusic`;
     const tweetUrl = encodeURIComponent(tweetText);
     window.open(`https://x.com/intent/tweet?text=${tweetUrl}`, '_blank', 'width=550,height=420');
     newShareBtn.classList.add("share-active");
@@ -369,9 +369,9 @@ if (shareBtns) {
     shareBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       const song = songMetadata[index];
-      const siteUrl = "https://succinct-music-player.vercel.app/";
+      const siteUrl = "https://succinct-playlist.vercel.app/";
       const tweetText = `Gprove... 🎶 
-Just vibin’, listening "${song.title}" by ${song.artist} on Succinct Audio Player. You gotta hear this:
+Just vibin’, listening "${song.title}" by ${song.artist} on Succinct music player. You gotta hear this:
 ${siteUrl}
 #ProveWithUs #SuccinctStars`;
       const tweetUrl = encodeURIComponent(tweetText);
