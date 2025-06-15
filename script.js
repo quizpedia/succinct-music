@@ -27,6 +27,7 @@ const songs = [
   "https://github.com/quizpedia/assets/raw/main/Stage%202.mp3",
   "https://github.com/quizpedia/assets/raw/main/Prove%20With%20Us.mp3",
   "https://github.com/quizpedia/assets/raw/main/Proof%20of%20the%20Future.mp3",
+  "https://github.com/quizpedia/assets/raw/main/Proofs%20Up.mp3",
 ];
 
 // Catatan: Ganti URL di atas dengan file lokal untuk menghindari masalah CORS, misalnya:
@@ -38,6 +39,7 @@ const songMetadata = [
   { title: "Stage 2", artist: "Nvrlxst" },
   { title: "Prove With Us", artist: "Sayang" },
   { title: "Proof Of The Future", artist: "Quinn" },
+  { title: "Proof's Up", artist: "Airdrop Zamani" },
 ];
 
 const thumbnails = [
@@ -46,6 +48,7 @@ const thumbnails = [
   "https://github.com/quizpedia/assets/raw/main/Nvrlxst.jpg",
   "https://github.com/quizpedia/assets/raw/main/Sayang.jpg",
   "https://github.com/quizpedia/assets/raw/main/Quinn.jpg",
+  "https://github.com/quizpedia/assets/raw/main/Zamani.jpg",
 ];
 
 var swiper = new Swiper(".swiper", {
