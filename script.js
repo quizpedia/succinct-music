@@ -22,12 +22,13 @@ let currentSongIndex = 1;
 let isSongLoaded = false;
 
 const songs = [
-  "https://github.com/quizpedia/assets/raw/main/Provers%20Code.mp3",
-  "https://github.com/quizpedia/assets/raw/main/Prove%20Ur%20Love.mp3",
-  "https://github.com/quizpedia/assets/raw/main/Stage%202.mp3",
-  "https://github.com/quizpedia/assets/raw/main/Prove%20With%20Us.mp3",
-  "https://github.com/quizpedia/assets/raw/main/Proof%20of%20the%20Future.mp3",
-  "https://github.com/quizpedia/assets/raw/main/Proofs%20Up.mp3",
+  "https://is3.cloudhost.id/succinct/assets/Provers%20Code.mp3",
+  "https://is3.cloudhost.id/succinct/assets/Prove%20Ur%20Love.mp3",
+  "https://is3.cloudhost.id/succinct/assets/Stage%202.mp3",
+  "https://is3.cloudhost.id/succinct/assets/Prove%20With%20Us.mp3",
+  "https://is3.cloudhost.id/succinct/assets/Proof%20of%20the%20Future.mp3",
+  "https://is3.cloudhost.id/succinct/assets/Proofs%20Up.mp3",
+  "https://is3.cloudhost.id/succinct/assets/SP1%20Vibes.mp3",
 ];
 
 // Catatan: Ganti URL di atas dengan file lokal untuk menghindari masalah CORS, misalnya:
@@ -40,6 +41,7 @@ const songMetadata = [
   { title: "Prove With Us", artist: "Sayang" },
   { title: "Proof Of The Future", artist: "Quinn" },
   { title: "Proof's Up", artist: "Airdrop Zamani" },
+  { title: "SP1 Vibes", artist: "77thESO" },
 ];
 
 const thumbnails = [
@@ -49,6 +51,7 @@ const thumbnails = [
   "https://github.com/quizpedia/assets/raw/main/Sayang.jpg",
   "https://github.com/quizpedia/assets/raw/main/Quinn.jpg",
   "https://github.com/quizpedia/assets/raw/main/Zamani.jpg",
+  "https://github.com/quizpedia/assets/raw/main/77thESO.jpg",
 ];
 
 var swiper = new Swiper(".swiper", {
